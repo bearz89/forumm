@@ -1,0 +1,30 @@
+<h1>Listing forumms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th width="70%">Forum</th>
+      <th width="30%">Last Post</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @forumms.each do |forumm| %>
+      <tr>
+        <td><h4><%= link_to h(forumm.name), forum_path(forum.id) %></h4>
+           <small><%= forum.topics.count %> topics</small><br />
+           <%=h forumm.description %></td>
+        <td><%= link_to 'Show', forumm %></td>
+        <td><%= link_to 'Edit', edit_forumm_path(forumm) %></td>
+        <td><%= link_to 'Destroy', forumm, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Forumm', new_forumm_path %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @forumm.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @forumm.description %>
+</p>
+
+<%= link_to 'Edit', edit_forumm_path(@forumm) %> |
+<%= link_to 'Back', forumms_path %>
